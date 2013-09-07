@@ -4,6 +4,5 @@ password=' '
 for line in $(cat list)
 do
 echo $line
-scp tivoli $username@$line:/etc/init.d
-ssh -n -f -o StrictHostKeyChecking=no $username@$line 'command'
+ssh -n -f -o StrictHostKeyChecking=no -p $password $username@$line 'command'
 done
