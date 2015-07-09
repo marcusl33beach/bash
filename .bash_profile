@@ -9,3 +9,8 @@ alias h=history
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
+# ssh function to log into servers.
+function s1() {
+ssh lg413871@${1}
+}
