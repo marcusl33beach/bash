@@ -1,0 +1,31 @@
+# Custom Aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias l='ls -la'
+alias ll='ls -l'
+alias h='history'
+alias free='free -m'
+alias dh='df -h'
+
+# Custom Aliases for vagrant
+alias vd="vagrant destroy -f"
+alias vu="vagrant up"
+alias vs="vagrant status"
+alias vdu="vagrant destroy -f && vagrant up"
+alias vssh="vagrant ssh"
+
+# Custom Aliases for chef kitchen
+alias kc='kitchen converge'
+alias kd='kitchen destroy'
+alias kt='kitchen test'
+alias kv='kitchen verify'
+alias kl='kitchen login'
+
+# Custom Aliases for git
+alias ga='git commit --amend'
+alias gpu='git push origin'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gb='git branch'
+alias gr='git remote -v'

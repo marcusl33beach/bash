@@ -1,0 +1,9 @@
+# Github
+
+function gou() {
+	url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
+}
+
+function gom() {
+	url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
+}
