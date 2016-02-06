@@ -1,0 +1,14 @@
+# Chef related
+.kitchen/
+.kitchen.local.yml
+Berksfile.lock
+Gemfile.lock
+
+# Eclipse related
+.project
+
+# GRRR MAC
+.DS_Store
+
+# Atom 
+.remote-sync.json

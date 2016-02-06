@@ -20,7 +20,8 @@ alias kc='kitchen converge'
 alias kd='kitchen destroy'
 alias kt='kitchen test'
 alias kv='kitchen verify'
-alias kl='kitchen login'
+alias kl='kitchen list'
+alias klg='kitchen login'
 
 # Custom Aliases for git
 alias ga='git commit --amend'
