@@ -10,5 +10,5 @@ Gemfile.lock
 # GRRR MAC
 .DS_Store
 
-# Atom 
+# Atom
 .remote-sync.json
