@@ -7,3 +7,21 @@ function gou() {
 function gom() {
 	url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
 }
+
+# RENAME ITERM TABS FROM COMMAND LINE!!
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
+# a small script to list aws instances.
+puters(){
+    headers='ID,Zone,PrivateIP,T:Name,T:Environment'
+
+    if [ ! -z ${2} ]; then
+        list_instances -H $headers -f "tag:Name=*$1*,tag:Environment=$2"
+    elif [ ! -z ${1} ]; then
+        list_instances -H $headers -f "tag:Name=*$1*"
+    else
+        list_instances -H $headers
+    fi
+}

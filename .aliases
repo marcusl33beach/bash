@@ -31,3 +31,26 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gb='git branch'
 alias gr='git remote -v'
+
+alias ginfo='
+echo "Remotes";
+echo "-------";
+git remote -v;
+echo
+echo "Branches";
+echo "-------";
+git branch;
+echo
+echo "Status"
+echo "-------";
+git status'
+
+# Custom Aliases for tmux
+alias tl='tmux list-session'
+alias ta='tmux attach-session'
+
+# MAC commands
+alias removeds='find . -name *.DS_Store -type f -delete'
+
+# just a bit of fun
+alias funny='ruby /data/projects/xkdc_downloader/xkdc_downloader.rb'

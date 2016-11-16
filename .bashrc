@@ -4,9 +4,10 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Custom bash prompt
-# export PS1="\e[37m\w \u \$(date +%k:%M:%S) >\e[m \$ "
-# Basic prompts setup
-export PS1='\[\e[4;36m\][\u@\h \W]\$\[\e[0m\] '
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="(\d \t) \u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
