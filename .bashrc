@@ -18,7 +18,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Some Ruby Gems requier this.
 #export USE_SYSTEM_GECODE=1
 
-. /data/cookbooks/dev-tools/bash_devtools.sh
+# . /data/cookbooks/dev-tools/bash_devtools.sh
 
 # Add in aliases
 if [ -f /data/projects/bash/.aliases ]; then
