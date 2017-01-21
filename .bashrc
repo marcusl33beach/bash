@@ -4,10 +4,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Custom bash prompt
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="(\d \t) \u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\[\e[36m\]Workstation \[\e[m\]\w: "
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
