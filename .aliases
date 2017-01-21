@@ -7,6 +7,7 @@ alias ll='ls -l'
 alias h='history'
 alias free='free -m'
 alias dh='df -h'
+alias clear='cat /data/brain && clear'
 
 # Custom Aliases for vagrant
 alias vd="vagrant destroy -f"
