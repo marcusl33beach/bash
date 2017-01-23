@@ -52,6 +52,3 @@ alias ta='tmux attach-session'
 
 # MAC commands
 alias removeds='find . -name *.DS_Store -type f -delete'
-
-# just a bit of fun
-alias funny='ruby /data/projects/xkdc_downloader/xkdc_downloader.rb'
