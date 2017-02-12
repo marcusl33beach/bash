@@ -4,21 +4,22 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Custom bash prompt
-export PS1="\[\e[36m\]Workstation \[\e[m\]\w: "
-
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+if [ -f /data/mac ]; then
+  export PS1="\[\e[36m\]Mac \[\e[m\]\w: "
+elif [ -f /data/ws ]; then
+	export PS1="\[\e[36m\]Workstation \[\e[m\]\w: "
+fi
 
 # Path
 export PATH="$PATH:/usr/local/bin/:/opt/chefdk/bin:/opt/chefdk/embedded/bin/:$HOME/.rbenv/shims:$PATH"
 
-# MacPorts Installer addition on 2015-05-20_at_09:46:07: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
 
-# Some Ruby Gems requier this.
-#export USE_SYSTEM_GECODE=1
-
-# . /data/cookbooks/dev-tools/bash_devtools.sh
+# MacPorts
+if [ -f /data/mac ]; then
+  export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+fi
 
 # Add in aliases
 if [ -f /data/projects/bash/.aliases ]; then
