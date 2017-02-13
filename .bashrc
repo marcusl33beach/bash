@@ -8,6 +8,8 @@ if [ -f /data/mac ]; then
   export PS1="\[\e[36m\]Mac \[\e[m\]\w: "
 elif [ -f /data/ws ]; then
 	export PS1="\[\e[36m\]Workstation \[\e[m\]\w: "
+else
+  export PS1="\[\e[36m\]Computer \[\e[m\]\w: "
 fi
 
 # Path
