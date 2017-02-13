@@ -26,14 +26,14 @@ alias klg='kitchen login'
 alias kcv='kitchen converge && kitchen verify'
 
 # Custom Aliases for git
-alias ga='git commit --amend'
-alias gpu='git push origin'
+alias gpo='git push origin master'
+alias gpu='git pull upstream master'
 alias ga='git add .'
-alias gc='git commit -m'
 alias gb='git branch'
 alias gr='git remote -v'
+alias gs='git status'
 
-alias ginfo='
+alias gi='
 echo "Remotes";
 echo "-------";
 git remote -v;
