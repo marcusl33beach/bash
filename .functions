@@ -1,5 +1,5 @@
 # Github
-# Open master upstream 
+# Open master upstream
 function gou() {
   url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
 }
@@ -33,6 +33,7 @@ puters(){
     fi
 }
 
+# A function to print out aws ips.
 putersips(){
         list_instances -H PrivateIP |sed 1,2d |grep -vi none
 }
