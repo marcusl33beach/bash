@@ -1,8 +1,3 @@
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
 # Custom bash prompt
 if [ -f /data/mac ]; then
   export PS1="\[\e[36m\]Mac \[\e[m\]\w: "
@@ -12,11 +7,8 @@ else
   export PS1="\[\e[36m\]Computer \[\e[m\]\w: "
 fi
 
-# Path
-export PATH="$PATH:/usr/local/bin/:/opt/chefdk/bin:/opt/chefdk/embedded/bin/:$HOME/.rbenv/shims:$PATH"
-
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+# Path export
+export PATH="$PATH:/usr/local/bin/:/opt/chefdk/bin:/opt/chefdk/embedded/bin/:$HOME/.rvm/bin:$HOME/.rbenv/shims:$PATH"
 
 # MacPorts
 if [ -f /data/mac ]; then
@@ -31,11 +23,6 @@ fi
 # functions
 if [ -f /projects/bash/.functions ]; then
   source "/data/projects/bash/.functions"
-fi
-
-# prodfile
-if [ -f /data/projects/bash/.bash_profile ]; then
-  source "/data/projects/bash/.bash_profile"
 fi
 
 # GE aliases
