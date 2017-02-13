@@ -23,39 +23,29 @@ if [ -f /data/mac ]; then
   export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 fi
 
-# Add in aliases
+# aliases
 if [ -f /data/projects/bash/.aliases ]; then
   source "/data/projects/bash/.aliases"
-elif [ -f /data/.aliases ]; then
-	source "/data/.aliases"
-fi
-
-# Add in functions
-if [ -f /projects/bash/.functions ]; then
-  source "/data/projects/bash/.functions"
-elif [ -f /data/.functions ]; then
-	source "/data/.functions"
-fi
-
-# Adding in my ge bash config
-if [ -f /data/projects/ge_bash/.ge_bash_profile ]; then
-  source "/data/projects/ge_bash/.ge_bash_profile"
-elif [ -f /data/.ge_bash_profile ]; then
-	source "/data/.ge_bash_profile"
-fi
-
-# aliases
-if [ -f /data/projects/ge_bash/.ge_bash_aliases ]; then
-  source "/data/projects/ge_bash/.ge_bash_aliases"
-elif [ -f /data/.ge_bash_aliases ]; then
-	source "/data/.ge_bash_aliases"
 fi
 
 # functions
+if [ -f /projects/bash/.functions ]; then
+  source "/data/projects/bash/.functions"
+fi
+
+# prodfile
+if [ -f /data/projects/bash/.bash_profile ]; then
+  source "/data/projects/bash/.bash_profile"
+fi
+
+# GE aliases
+if [ -f /data/projects/ge_bash/.ge_bash_aliases ]; then
+  source "/data/projects/ge_bash/.ge_bash_aliases"
+fi
+
+# GE functions
 if [ -f /data/projects/ge_bash/.ge_bash_functions ]; then
   source "/data/projects/ge_bash/.ge_bash_functions"
-elif  [ -f /data/.ge_bash_functions ]; then
-  source "/data/.ge_bash_functions"
 fi
 
 # Chefdk ruby
