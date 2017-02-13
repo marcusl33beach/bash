@@ -1,12 +1,19 @@
 # Github
-
+# Open master upstream 
 function gou() {
-	url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
+  url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
 }
 
+# open origin master
 function gom() {
-	url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
+  url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
 }
+
+# git commit
+function gc() {
+  git commit -t '$1'
+}
+
 
 # RENAME ITERM TABS FROM COMMAND LINE!!
 function title {
