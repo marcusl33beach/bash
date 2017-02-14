@@ -8,6 +8,7 @@ alias h='history'
 alias free='free -m'
 alias dh='df -h'
 alias clear='cat /data/brain && clear'
+alias dot='source ~/.bashrc'
 
 # Custom Aliases for vagrant
 alias vd="vagrant destroy -f"
@@ -48,7 +49,6 @@ git status'
 
 # Custom Aliases for tmux
 alias tl='tmux list-session'
-alias ta='tmux attach-session'
 
 # MAC commands
 alias removeds='find . -name *.DS_Store -type f -delete'

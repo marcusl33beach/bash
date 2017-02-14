@@ -10,7 +10,7 @@ function gom() {
 
 # Github commit
 function gc() {
-  git commit -t '$1'
+  git commit -t $1
 }
 
 # List AWS instances.
@@ -29,4 +29,9 @@ puters(){
 # Prints out AWS IPs.
 putersips(){
         list_instances -H PrivateIP |sed 1,2d |grep -vi none
+}
+
+# tmux
+function ta(){
+  tmux attach-session $1
 }
