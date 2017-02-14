@@ -21,7 +21,7 @@ if [ -f /data/projects/bash/.aliases ]; then
 fi
 
 # functions
-if [ -f /projects/bash/.functions ]; then
+if [ -f /data/projects/bash/.functions ]; then
   source "/data/projects/bash/.functions"
 fi
 

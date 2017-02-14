@@ -1,26 +1,19 @@
-# Github
-# Open master upstream
+# Github open master upstream
 function gou() {
   url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
 }
 
-# open origin master
+# Github open origin master
 function gom() {
   url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
 }
 
-# git commit
+# Github commit
 function gc() {
   git commit -t '$1'
 }
 
-
-# RENAME ITERM TABS FROM COMMAND LINE!!
-function title {
-    echo -ne "\033]0;"$*"\007"
-}
-
-# a small script to list aws instances.
+# List AWS instances.
 puters(){
     headers='ID,Zone,PrivateIP,T:Name,T:Environment'
 
@@ -33,7 +26,7 @@ puters(){
     fi
 }
 
-# A function to print out aws ips.
+# Prints out AWS IPs.
 putersips(){
         list_instances -H PrivateIP |sed 1,2d |grep -vi none
 }
