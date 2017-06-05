@@ -60,6 +60,3 @@ fi
 
 # Chefdk ruby
 eval "$(chef shell-init bash)"
-
-. /data/dev-tools/bash_devtools.sh
-source ~/source_file
