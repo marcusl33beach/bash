@@ -7,6 +7,9 @@ else
   export PS1="\[\e[36m\]Computer \[\e[m\]\w: "
 fi
 
+# Path export
+export PATH="$PATH:/usr/local/bin/:/opt/chefdk/bin:/opt/chefdk/embedded/bin/:$HOME/.rvm/bin:$HOME/.rbenv/shims:$PATH"
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -60,3 +63,6 @@ fi
 
 # Chefdk ruby
 eval "$(chef shell-init bash)"
+
+. /data/dev-tools/bash_devtools.sh
+source ~/source_file
