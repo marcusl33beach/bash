@@ -1,6 +1,6 @@
 #!/bin/bash
 # Text color variables
-# To us add this line where you want color:
+# To use add this line where you want color:
 # echo $txtred blah $txtylw blip $txtpur blahblah
 txtund=$(tput sgr 0 1)    # Underline
 txtbld=$(tput bold)       # Bold
