@@ -10,7 +10,7 @@ function gom() {
 
 # Github commit
 function gc() {
-  git commit -t $1
+  git commit -t "$1"
 }
 
 # List AWS instances.
@@ -34,4 +34,8 @@ putersips(){
 # tmux
 function ta(){
   tmux attach-session $1
+}
+
+function tn(){
+  tmux new -s $1
 }

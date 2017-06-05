@@ -51,4 +51,4 @@ git status'
 alias tl='tmux list-session'
 
 # MAC commands
-alias removeds='find . -name *.DS_Store -type f -delete'
+alias removeds='find . -name *.DS_Store -type f -delete && echo -e "\e[32mSuccessfully Executed!"'

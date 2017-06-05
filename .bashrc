@@ -25,6 +25,11 @@ if [ -f /data/projects/bash/.functions ]; then
   source "/data/projects/bash/.functions"
 fi
 
+# color
+if [ -f /data/projects/bash/.bashcolor ]; then
+  source "/data/projects/bash/.bashcolor"
+fi
+
 # GE aliases
 if [ -f /data/projects/ge_bash/.ge_bash_aliases ]; then
   source "/data/projects/ge_bash/.ge_bash_aliases"
@@ -37,3 +42,6 @@ fi
 
 # Chefdk ruby
 eval "$(chef shell-init bash)"
+
+. /data/dev-tools/bash_devtools.sh
+source ~/source_file
