@@ -1,3 +1,7 @@
+# ##############################################################################
+# Github
+# ##############################################################################
+
 # Github open master upstream
 function gou() {
   url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
@@ -10,11 +14,16 @@ function gom() {
 
 # Github commit
 function gc() {
-  git commit -t "$1"
+  local message=$1
+  git commit -t '$message'
 }
 
+# ##############################################################################
+# AWS
+# ##############################################################################
+
 # List AWS instances.
-puters(){
+computers(){
     headers='ID,Zone,PrivateIP,T:Name,T:Environment'
 
     if [ ! -z ${2} ]; then
@@ -27,15 +36,28 @@ puters(){
 }
 
 # Prints out AWS IPs.
-putersips(){
+computers_ips(){
         list_instances -H PrivateIP |sed 1,2d |grep -vi none
 }
 
-# tmux
-function ta(){
-  tmux attach-session $1
+# terminate instance in AWS
+function computers_term(){
+  local instance_id=$1
+    aws ec2 terminate-instances --instance-ids $instance_id --region us-east-1
 }
 
+# ##############################################################################
+# Tmux
+# ##############################################################################
+
+# tmux attach to session
+function ta(){
+  local session_name=$1
+  tmux attach-session $session_name
+}
+
+# tmux start a new session
 function tn(){
-  tmux new -s $1
+  local session=$1
+  tmux new -s $session
 }
