@@ -58,7 +58,7 @@ fi
 # Adding our Dragon friend.
 if [ -f /usr/bin/cowsay ]; then
   dragon=`cowsay -f dragon Who dared to wake me up?`
-  echo -e "\e[32m$dragon"
+  echo -e "\e[36m$dragon"
 fi
 
 # Chefdk ruby
