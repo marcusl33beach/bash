@@ -7,7 +7,7 @@ Gemfile.lock
 # Eclipse related
 .project
 
-# GRRR MAC
+# MAC
 .DS_Store
 
 # Atom
