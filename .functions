@@ -24,7 +24,7 @@ function gc() {
 
 # List AWS instances.
 computers(){
-    headers='ID,Zone,PrivateIP,T:Name,T:Environment'
+    headers='ID,T:Space,T:Space,Zone,PrivateIP,T:Name,T:Environment'
 
     if [ ! -z ${2} ]; then
         list_instances -H $headers -f "tag:Name=*$1*,tag:Environment=$2"
