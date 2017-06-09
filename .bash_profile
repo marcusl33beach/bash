@@ -25,6 +25,11 @@ if [ -f /data/mac ]; then
   export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 fi
 
+# Adding colors to ls in MAC
+if [ -f /data/mac ]; then
+	export CLICOLOR=1
+fi
+
 # aliases
 if [ -f /data/projects/bash/.aliases ]; then
   source "/data/projects/bash/.aliases"
@@ -53,7 +58,7 @@ fi
 # Adding our Dragon friend.
 if [ -f /usr/bin/cowsay ]; then
   dragon=`cowsay -f dragon Who dared to wake me up?`
-  echo -e "\e[32m$dragon"
+  echo -e "\e[36m$dragon"
 fi
 
 # Chefdk ruby
