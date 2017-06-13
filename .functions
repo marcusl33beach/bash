@@ -46,6 +46,17 @@ function computers_term(){
     aws ec2 terminate-instances --instance-ids $instance_id --region us-east-1
 }
 
+# AWS ELB list
+elb_list(){
+  aws elb describe-load-balancers | grep LoadBalancerName
+}
+
+# AWS EBL describe
+elb_des(){
+  local elb_name=$1
+  aws elb describe-load-balancers --load-balancer-name $elb_name
+}
+
 # ##############################################################################
 # Tmux
 # ##############################################################################
