@@ -51,10 +51,24 @@ elb_list(){
   aws elb describe-load-balancers | grep LoadBalancerName
 }
 
-# AWS EBL describe
+# AWS ELB describe
 elb_des(){
   local elb_name=$1
   aws elb describe-load-balancers --load-balancer-name $elb_name
+}
+
+# AWS ELB Deregister
+elb_dereg(){
+  local elb_name=$1
+  local instance=$2
+  aws elb deregister-instances-from-load-balancer --load-balancer-name $elb_name --instances $instance
+}
+
+# AWS ELB Register
+elb_reg(){
+  local elb_name=$1
+  local instance=$2
+  aws elb register-instances-from-load-balancer --load-balancer-name $elb_name --instances $instance
 }
 
 # ##############################################################################
