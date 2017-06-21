@@ -68,7 +68,7 @@ elb_dereg(){
 elb_reg(){
   local elb_name=$1
   local instance=$2
-  aws elb register-instances-from-load-balancer --load-balancer-name $elb_name --instances $instance
+  aws elb register-instances-with-load-balancer --load-balancer-name $elb_name --instances $instance
 }
 
 # ##############################################################################
