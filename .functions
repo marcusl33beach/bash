@@ -1,88 +1,35 @@
-# ##############################################################################
+# ------------------------------------------------------------------------------
 # Github
-# ##############################################################################
+# ------------------------------------------------------------------------------
 
 # Github open master upstream
-function gou() {
+gou(){
   url=`git remote -v |grep fetch |grep -v upstream |awk '{print $2}'`; open $url
 }
 
 # Github open origin master
-function gom() {
+gom(){
   url=`git remote -v |grep fetch |grep -v origin |awk '{print $2}'`; open $url
 }
 
 # Github commit
-function gc() {
+gc(){
   local message=$1
-  git commit -t '$message'
+  git commit -t $message
 }
 
-# ##############################################################################
-# AWS
-# ##############################################################################
-
-# List AWS instances.
-computers(){
-    headers='ID,T:Space,Zone,PrivateIP,T:Name,T:Environment'
-
-    if [ ! -z ${2} ]; then
-        list_instances -H $headers -f "tag:Name=*$1*,tag:Environment=$2"
-    elif [ ! -z ${1} ]; then
-        list_instances -H $headers -f "tag:Name=*$1*"
-    else
-        list_instances -H $headers
-    fi
-}
-
-# Prints out AWS IPs.
-computers_ips(){
-        list_instances -H PrivateIP |sed 1,2d |grep -vi none
-}
-
-# terminate instance in AWS
-function computers_term(){
-  local instance_id=$1
-    aws ec2 terminate-instances --instance-ids $instance_id --region us-east-1
-}
-
-# AWS ELB list
-elb_list(){
-  aws elb describe-load-balancers | grep LoadBalancerName
-}
-
-# AWS ELB describe
-elb_des(){
-  local elb_name=$1
-  aws elb describe-load-balancers --load-balancer-name $elb_name
-}
-
-# AWS ELB Deregister
-elb_dereg(){
-  local elb_name=$1
-  local instance=$2
-  aws elb deregister-instances-from-load-balancer --load-balancer-name $elb_name --instances $instance
-}
-
-# AWS ELB Register
-elb_reg(){
-  local elb_name=$1
-  local instance=$2
-  aws elb register-instances-with-load-balancer --load-balancer-name $elb_name --instances $instance
-}
-
-# ##############################################################################
+# ------------------------------------------------------------------------------
 # Tmux
-# ##############################################################################
+# ------------------------------------------------------------------------------
 
 # tmux attach to session
-function ta(){
+ta(){
   local session_name=$1
   tmux attach-session $session_name
 }
 
 # tmux start a new session
-function tn(){
+tn(){
   local session=$1
   tmux new -s $session
 }

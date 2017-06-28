@@ -1,0 +1,20 @@
+run_dir(){
+  for dir in ./*
+  do
+    test -d "$dir" || continue
+    echo "*** $dir"
+    ( cd $dir && $1 )
+  done
+}
+
+super_kl(){
+    run_dir 'kitchen list'
+}
+
+super_kd(){
+    run_dir 'kitchen destroy'
+}
+
+super_status(){
+    run_dir "git status"
+}

@@ -1,0 +1,93 @@
+# ------------------------------------------------------------------------------
+# AWS functions
+# ------------------------------------------------------------------------------
+
+# List AWS instances.
+computers(){
+    headers='ID,T:Space,Zone,PrivateIP,T:Name,T:Environment'
+
+    if [ ! -z ${2} ]; then
+        list_instances -H $headers -f "tag:Name=*$1*,tag:Environment=$2"
+    elif [ ! -z ${1} ]; then
+        list_instances -H $headers -f "tag:Name=*$1*"
+    else
+        list_instances -H $headers
+    fi
+}
+
+# Prints out AWS IPs.
+computers_ips(){
+        list_instances -H PrivateIP |sed 1,2d |grep -vi none
+}
+
+# terminate instance in AWS
+computers_term(){
+  local instance_id=$1
+    aws ec2 terminate-instances --instance-ids $instance_id --region us-east-1
+}
+
+# AWS ELB list
+elb_list(){
+  aws elb describe-load-balancers | grep LoadBalancerName
+}
+
+# AWS ELB describe
+elb_des(){
+  local elb_name=$1
+  aws elb describe-load-balancers --load-balancer-name $elb_name
+}
+
+# AWS ELB Deregister
+elb_dereg(){
+  local elb_name=$1
+  local instance=$2
+  aws elb deregister-instances-from-load-balancer --load-balancer-name $elb_name --instances $instance
+}
+
+# AWS ELB Register
+elb_reg(){
+  local elb_name=$1
+  local instance=$2
+  aws elb register-instances-with-load-balancer --load-balancer-name $elb_name --instances $instance
+}
+
+# AWS start instance
+ins_start(){
+  local instance=$1
+  aws ec2 start-instances --instance-ids $instance
+}
+
+# AWS stop instance
+ins_stop(){
+  local instance=$1
+  aws ec2 stop-instances --instance-id $instance
+}
+
+# AWS reboot instance
+ins_reboot(){
+  local instance=$1
+  aws ec2 reboot-instances --instance-ids $instance
+}
+
+# AWS create image
+cr_img(){
+  local instance=$1
+  lcoal ami_name="$2"
+  local ami_description="$3"
+  aws ec2 create-image --instance-id $instance --name $ami_name --description $ami_description
+}
+
+# AWS create instance
+cr_ins(){
+  local image_id=$1
+  local key_name=$2
+  local security_group=$3
+  local subnet_id=$4
+  aws ec2 run-instances --image-id $image_id --count 1 --instance-type t1.micro --key-name $key_name --security-group-ids $security_group --subnet-id $subnet_id
+}
+
+# aws describe instance
+des_ins(){
+  local instance=$1
+  aws ec2 describe-instances --instance-ids $instance
+}

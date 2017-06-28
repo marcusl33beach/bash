@@ -40,6 +40,16 @@ if [ -f /data/projects/bash/.functions ]; then
   source "/data/projects/bash/.functions"
 fi
 
+# aws_functions
+if [ -f /data/projects/bash/.aws_functions ]; then
+  source "/data/projects/bash/.aws_functions"
+fi
+
+# kitchen_functions
+if [ -f /data/projects/bash/.kitchen_functions ]; then
+  source "/data/projects/bash/.kitchen_functions"
+fi
+
 # color
 if [ -f /data/projects/bash/.bashcolor ]; then
   source "/data/projects/bash/.bashcolor"

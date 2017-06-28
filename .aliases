@@ -1,4 +1,4 @@
-# Custom Aliases
+# Bash
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -8,16 +8,17 @@ alias h='history'
 alias free='free -m'
 alias dh='df -h'
 alias clear='cat /data/brain && clear'
-alias dot='source ~/.bashrc'
+alias dot='source ~/.bash_profile'
+alias funlist='declare -F'
 
-# Custom Aliases for vagrant
+# Vagrant
 alias vd="vagrant destroy -f"
 alias vu="vagrant up"
 alias vs="vagrant status"
 alias vdu="vagrant destroy -f && vagrant up"
 alias vssh="vagrant ssh"
 
-# Custom Aliases for chef kitchen
+# Chef kitchen
 alias kc='kitchen converge'
 alias kd='kitchen destroy'
 alias kt='kitchen test'
@@ -26,7 +27,13 @@ alias kl='kitchen list'
 alias klg='kitchen login'
 alias kcv='kitchen converge && kitchen verify'
 
-# Custom Aliases for git
+# berkshelf
+alias bi='berks install'
+alias bl='berks list'
+alias br='rm Berksfile.lock'
+alias bir='br && bi'
+
+# Git
 alias gpo='git push origin master'
 alias gpu='git pull upstream master'
 alias ga='git add .'
@@ -47,8 +54,11 @@ echo "Status"
 echo "-------";
 git status'
 
-# Custom Aliases for tmux
+# Tmux
 alias tl='tmux list-session'
 
-# MAC commands
+# MAC
 alias removeds='find . -name *.DS_Store -type f -delete && echo $txtcyn .DS_Store Successfully Deleted! $txtrst'
+
+# Ssh
+alias clean_knonwn='rm ~/.ssh/known_hosts'
