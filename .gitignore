@@ -4,8 +4,11 @@
 Berksfile.lock
 Gemfile.lock
 
-# Eclipse related
+# Eclipse
+.externalToolBuilders
 .project
+.settings
+.buildpath
 
 # MAC
 .DS_Store
