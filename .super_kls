@@ -1,0 +1,24 @@
+# Runs a passed in command in each of the first level subdirectories
+# of the current directory.  This will not run anything in a subdirectory
+# of a subdirectory of the current directory.
+run_dir(){
+  for dir in ./*
+  do
+    test -d "$dir" || continue
+    echo "*** $dir"
+    ( cd $dir && $1 )
+  done
+}
+
+super_kl(){
+    run_dir 'kitchen list' 2>/dev/null
+}
+
+super_kd(){
+    run_dir 'kitchen destroy' 2>/dev/null
+}
+
+super_status(){
+    run_dir "git status" 2>/dev/null
+}
+

@@ -7,7 +7,7 @@ alias ll='ls -l'
 alias h='history'
 alias free='free -m'
 alias dh='df -h'
-alias clear='cat /data/brain && clear'
+alias clear='cat /data/brain |lolcat --seed 30 && clear'
 alias dot='source ~/.bash_profile'
 alias funlist='declare -F'
 
@@ -18,7 +18,7 @@ alias vs="vagrant status"
 alias vdu="vagrant destroy -f && vagrant up"
 alias vssh="vagrant ssh"
 
-# Chef kitchen
+# Chef and kitchen
 alias kc='kitchen converge'
 alias kd='kitchen destroy'
 alias kt='kitchen test'
@@ -26,6 +26,7 @@ alias kv='kitchen verify'
 alias kl='kitchen list'
 alias klg='kitchen login'
 alias kcv='kitchen converge && kitchen verify'
+alias fcp='sudo find . -type d -exec chmod 755 {} + && sudo find . -type f -exec chmod 644 {} + && echo $txtcyn Successfully Set permission on all files $txtrst'
 
 # berkshelf
 alias bi='berks install'

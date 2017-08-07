@@ -40,6 +40,11 @@ if [ -f /data/projects/bash/.functions ]; then
   source "/data/projects/bash/.functions"
 fi
 
+# super_kls
+if [ -f /data/projects/bash/.super_kls ]; then
+  source "/data/projects/bash/.super_kls"
+fi
+
 # aws_functions
 if [ -f /data/projects/bash/.aws_functions ]; then
   source "/data/projects/bash/.aws_functions"
@@ -67,8 +72,7 @@ fi
 
 # Adding our Dragon friend.
 if [ -f /usr/bin/cowsay ]; then
-  dragon=`cowsay -f dragon Who dared to wake me up?`
-  echo -e "\e[36m$dragon"
+  cowsay -f dragon "Who dared to wake me up?" |lolcat --seed 30
 fi
 
 # Chefdk ruby
