@@ -70,11 +70,6 @@ if [ -f /data/projects/ge_bash/.ge_bash_functions ]; then
   source "/data/projects/ge_bash/.ge_bash_functions"
 fi
 
-# Adding our Dragon friend.
-if [ -f /usr/bin/cowsay ]; then
-  cowsay -f dragon "Who dared to wake me up?" |lolcat --seed 30
-fi
-
 # Chefdk ruby
 eval "$(chef shell-init bash)"
 
